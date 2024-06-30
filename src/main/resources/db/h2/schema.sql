@@ -62,3 +62,13 @@ CREATE TABLE visits (
 );
 ALTER TABLE visits ADD CONSTRAINT fk_visits_pets FOREIGN KEY (pet_id) REFERENCES pets (id);
 CREATE INDEX visits_pet_id ON visits (pet_id);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    middle_initial CHAR(1),
+    login_id VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

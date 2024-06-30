@@ -112,3 +112,19 @@ select * from owners;
 
 ![MySQL Terminal](images/13-mysql-terminal-2.png)
 `### End ###`
+
+
+## Connect to MySQL in local environment
+1. Fork the Pet-clinic repository.
+2. Create a new branch - 'Test'
+3. Maven install. -> Build will fail because of testcase errors, but we can use 'Run Java' to start application.
+4. Create html files and controller, repository and model classes.
+5. Format the classes with "spring-javaformat:apply" -> this helps avoiding issues when executing maven install.
+6. Create a database in mysql using workbench and execute sql files in order, user.sql, schema.sql, data.sql
+	execute 'use petclinic' before executing schema.sql
+7. Add mysql details in application.properties file and comment h2 in pom.xml to mysql to work.
+	SQL Details:
+	spring.datasource.url=jdbc:mysql://localhost:3306/petclinic?serverTimezone=UTC
+	spring.datasource.username=root
+	spring.datasource.password=admin123
+	spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
